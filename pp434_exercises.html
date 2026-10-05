@@ -82,15 +82,26 @@
 
         <section>
         <div class="chart-description">
-            <h2>Section 3: Chart </h2>
+            <h2>Section 3: China's Renewable Energy Output </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                China's Renewable Energy Output
-                Source: Economics Observatory Data Hub
+                Created through the Economics Observatory Data Hub
             </p>
         </div>
         <figure id="Location4"></figure>
 
     </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 4: The UK's Renewable Energy Output </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Created through the Economics Observatory Data Hub
+            </p>
+        </div>
+        <figure id="Location5"></figure>
+
+    </section>
+
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -113,6 +124,10 @@
         let figure_4_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/china_renewables.json";
 
         vegaEmbed('#Location4', figure_4_spec)
+
+        let figure_5_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/uk_renewables.json";
+
+        vegaEmbed('#Location5', figure_5_spec)
 
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
