@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
+<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
+<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
+<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
+
+<!-- Take a look around and make your own copy to adapt for your own use. -->
+
+<!-- This is a comment -->
+<!-- Comments are not displayed in the browser -->
+<!-- They can be used to leave notes in the code -->
+
+<html> 
+    <!-- HTML is heirarchial: tags like this define elements on the page. 
+    Each tag does something different. For example:
+        - The <html> tag defines the whole document.
+        - The <h1> tag defines a large heading
+        - The <p> tag defines a paragraph
+        - Tags appear as an opening <div> and closing </div> pair
+    -->
+
+<head>    
+    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
+    <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="Stylesheet_portfolio.css">
+    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    <!-- This is a link to the vega-lite packages which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+
+    <style>
+        /* CSS styles can be defined here, or in a separate CSS file */
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
+
+</head>
+
+<body> 
+<!-- The body tag contains the elements that visitors to our page will see. -->
+    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
+        <!-- This is a header, it is the largest text on the page -->
+        Ysien LAU
+    </h1>
+    <p style="margin-top: 0px; color: darkslateblue">
+        <!-- we're setting the margin to 0px so the header and authour name are close together -->
+        My work | <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a> | <a
+            href="https://github.com/ysienlau">GitHub</a>
+    </p>
+    <p> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
+        Exercises for the Automated Data Visualisation Class (PP434) at LSE (Autumn Term, 2026/2027)
+    </p>
+
+     <section>
+        <div class="chart-description">
+            <h2>Section 1: Adding a Chart</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This is an interesting chart on inflation. 
+                Source: OECD
+            </p>
+        </div>
+        <figure id="Location2"></figure>
+
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 2: One more chart!</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This is an interesting chart on how official inflation is measured. Why hotels???
+                Source: CPIH
+            </p>
+        </div>
+        <figure id="Location3"></figure>
+
+    </section>
+
+        <section>
+        <div class="chart-description">
+            <h2>Section 3: Chart </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                China's Renewable Energy Output
+                Source: Economics Observatory Data Hub
+            </p>
+        </div>
+        <figure id="Location3"></figure>
+
+    </section>
+
+    <!-- Do you want to add more sections? -->
+        <!-- Try copying pasting the section above -->
+        <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
+        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+
+
+    <!-- This is a script, it's a way to run JavaScript code on the page -->
+    <script>
+        // This is a comment in JavaScript - it's a different language to HTML and CSS
+        
+        let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json";
+
+        vegaEmbed('#Location2', figure_2_spec)
+
+        let figure_3_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartBar8.json";
+
+        vegaEmbed('#Location3', figure_3_spec)
+
+        let figure_4_spec = "/Users/ysienlau/ysienlau.github.io/china_renewables.json";
+
+        vegaEmbed('#Location4', figure_4_spec)
+
+        // Do you want to add more graphs?
+        // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
+        // e.g. 
+        // let figure_2_spec = ...
+        // vegaEmbed('#Location2', figure_2_spec)
+
+
+    </script>
+
+</body>
+    
+</html>

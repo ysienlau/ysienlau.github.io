@@ -1,0 +1,51 @@
+/* ---- Base setup ---- */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #1f2d2b;
+  background-color: #f4f1ea;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  line-height: 1.6;
+}
+
+/* ---- Headings ---- */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 48px;
+  border-bottom: 1px solid #d6d0c2;
+  padding-bottom: 8px;
+}
+
+/* ---- Header/intro text under the name ---- */
+header p {
+  font-style: italic;
+  color: #555;
+  margin-top: 0;
+}
+
+/* ---- Links ---- */
+a {
+  color: #2f6f5e;
+}
+
+nav a {
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+iframe {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
