@@ -1,0 +1,19 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/usdieselprices.csv"
+},
+"title": {
+"text": "US Diesel Prices"
+},
+"width": 300,
+"height": 300,
+"mark": {
+"type": "line",
+"color": "red"
+},
+"encoding": {
+"x": { "field": "date", "type": "temporal", "title": "Year"},
+"y": { "field": "value", "type": "quantitative", "title": "Dollars per Gallon"}
+}
+}
