@@ -2,11 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
   "title": {
-    "text": "Big penguins have big flippers",
-    "subtitle": "Comparing the body mass and flipper lengths of 3 species of penguins"
+    "text": "Comparing the body mass and flipper lengths of 3 species of penguins",
+    "subtitle": "Scatterplot"
   },
   "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/penguindata.json"},
-  "mark": {"type": "point", "filled": true, "size": 70, "opacity": 0.85},
+  "mark": {"type": "circle"},
   "encoding": {
     "y": {
       "field": "Flipper Length (mm)",
