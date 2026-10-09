@@ -5,7 +5,7 @@
     "text": "Big penguins have big flippers",
     "subtitle": "Comparing the body mass and flipper lengths of 3 species of penguins"
   },
-  "data": {"url": "https://vega.github.io/vega-lite/data/penguins.json"},
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/penguindata.json"},
   "mark": {"type": "point", "filled": true, "size": 70, "opacity": 0.85},
   "encoding": {
     "y": {
