@@ -1,51 +1,75 @@
+:root {
+  --sky: #DDF0FF;
+  --coral: #FF6F59;
+  --sun: #FFC93C;
+  --ink: #111111;
+  --paper: #FFFFFF;
+  --data-blue: #1F5FBF;
+  --font-head: 'Archivo Black', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 /* ---- Base setup ---- */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #1f2d2b;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 40px 24px;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sky);
 }
 
 /* ---- Headings ---- */
 h1 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  color: #b13706;
+  font-family: var(--font-head);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--coral);
+  border: 2px solid var(--ink);
+  padding: 0 12px;
+  display: inline-block;
   font-size: 2.6rem;
   margin-bottom: 4px;
 }
 
 h2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-head);
+  font-weight: 400;
+  border-bottom: 2px solid var(--ink);
   font-size: 1.6rem;
   margin-top: 48px;
-  border-bottom: 1px solid #d6d0c2;
   padding-bottom: 8px;
 }
 
 /* ---- Header/intro text under the name ---- */
 header p {
-  font-style: italic;
-  color: #555;
+  color: var(--ink);
   margin-top: 0;
 }
 
 /* ---- Links ---- */
 a {
-  color: #2f6f5e;
+  color: var(--data-blue);
 }
 
 nav a {
-  margin-right: 16px;
+  margin-right: 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  background: var(--sun);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-bottom-width: 4px;
+  padding: 4px 12px;
+  display: inline-block;
 }
 
 iframe {
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid var(--ink);
+  border-bottom-width: 5px;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--paper);
+}
+
+.links {
+  margin-top: 0;
+  color: var(--ink);
 }
