@@ -3,11 +3,10 @@
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
   "title": {
     "text": "Big penguins have big flippers",
-    "subtitle": "Comparing the body mass and flipper lengths of 3 spieces of penguins"},
-  "data": {
-    "url": "data/penguins.json"
+    "subtitle": "Comparing the body mass and flipper lengths of 3 species of penguins"
   },
-  "mark": "circle",
+  "data": {"url": "https://vega.github.io/vega-lite/data/penguins.json"},
+  "mark": {"type": "point", "filled": true, "size": 70, "opacity": 0.85},
   "encoding": {
     "y": {
       "field": "Flipper Length (mm)",
@@ -20,11 +19,13 @@
       "scale": {"zero": false}
     },
     "color": {
-      "field": "Species", 
+      "field": "Species",
       "type": "nominal",
-      "scale": {"domain": ["Adelie", "Chinstrap", "Gentoo"],
-    "range": ["#C85F00", "#09598A", "#EAB805"]}
-      },
+      "scale": {
+        "domain": ["Adelie", "Chinstrap", "Gentoo"],
+        "range": ["#C85F00", "#09598A", "#EAB805"]
+      }
+    },
     "shape": {"field": "Species", "type": "nominal"}
   }
 }
