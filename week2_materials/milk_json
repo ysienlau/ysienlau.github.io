@@ -1,0 +1,10 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/CPI_milk.csv"},
+  "title": "CPI weights for Milk, Cheese and Eggs",
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"},
+    "y": {"field": "value", "type": "quantitative", "title": "parts per 1000"}
+  }
+}
