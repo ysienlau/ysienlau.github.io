@@ -145,6 +145,26 @@ iframe {
   color: var(--coral);
 }
 
+.card-chart {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 4px 0 12px;
+  padding: 8px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-bottom-width: 4px;
+  overflow: hidden;        /* nothing can paint over the border */
+  pointer-events: none;    /* acts as a preview, no hover tooltips */
+}
+
+#featured-chart,
+#featured-chart .vega-embed {
+  width: 100%;
+}
+
+/* headers */
+
 .topbar {
   display: flex;
   justify-content: space-between;

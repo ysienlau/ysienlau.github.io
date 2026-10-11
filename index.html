@@ -7,6 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet_index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 </head>
 <body>
 <header class="topbar">
@@ -39,6 +42,9 @@
     <span class="tag">Coursework · PP434</span>
     <h3>PP434 Exercises</h3>
     <p>Portfolio for the PP434 Automated Data Visualisation class at the LSE.</p>
+    <div class="card-chart">
+      <div id="featured-chart"></div>
+    </div>
     <p class="status"><a href="portfolio.html">View exercises →</a></p>
   </article>
 
@@ -63,6 +69,28 @@
   <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a>
   <a href="https://github.com/ysienlau">GitHub</a>
 </footer>
+
+
+<script>
+(function () {
+  var SPEC_URL = "week2_materials/milk.json";
+
+  fetch(SPEC_URL)
+    .then(function (r) { return r.json(); })
+    .then(function (spec) {
+      spec.width = "container";
+      spec.height = 180;
+      spec.autosize = {type: "fit", contains: "padding"};
+      spec.padding = {left: 5, right: 20, top: 5, bottom: 5};
+      return vegaEmbed("#featured-chart", spec, {actions: false});
+    })
+    .then(function (result) {
+      window.addEventListener("load", function () { result.view.resize().runAsync(); });
+      setTimeout(function () { result.view.resize().runAsync(); }, 300);
+    })
+    .catch(function (err) { console.error("Featured chart failed:", err); });
+})();
+</script>
 
 </body>
 </html>

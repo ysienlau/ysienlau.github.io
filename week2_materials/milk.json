@@ -2,9 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/CPI_milk.csv"},
   "title": "CPI weights for Milk, Cheese and Eggs",
-  "width": 700,
+  "config": {
+    "font": "Inter",
+    "title": {"font": "Archivo Black", 
+    "fontWeight": 400}},
+"width": 700,
   "height": 350,
-  "mark": {"type": "line", "color": "#098a88"},
+  "mark": {"type": "line", "strokeWidth": 3, "color": "#098a88"},
   "encoding": {
     "x": {"field": "year", "type": "temporal", "axis": {"titleFontStyle": "italic"}},
     "y": {"field": "value", "type": "quantitative", "title": "parts per 1000", "axis": {"titleFontStyle": "italic"}}
