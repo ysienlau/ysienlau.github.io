@@ -79,9 +79,16 @@ iframe {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 16px;
+}
+
+/* stack to one column on narrow screens (phones) */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
@@ -99,6 +106,7 @@ iframe {
   font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 10px;
+  align-self: flex-start;
 }
 
 .card h3 {
@@ -120,6 +128,21 @@ iframe {
   font-style: normal;
   font-weight: 500;
   margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .status {
+  margin-top: auto;
+  padding-top: 8px;
+  text-decoration: none;
+}
+
+.card .status a:hover {
+  color: var(--coral);
 }
 
 .topbar {
@@ -178,7 +201,6 @@ iframe {
 .hero p {
   font-size: 1rem;
   line-height: 1.6;
-  max-width: 440px;
   margin: 0;
 }
 
