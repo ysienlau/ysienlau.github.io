@@ -11,7 +11,8 @@
     "y": {
       "field": "Flipper Length (mm)",
       "type": "quantitative",
-      "scale": {"zero": false}
+      "scale": {"zero": false},
+      "axis": {"labelFontSize": 14, "titleFontSize": 14}
     },
     "x": {
       "field": "Body Mass (g)",
