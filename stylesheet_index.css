@@ -14,6 +14,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background: var(--sky);
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 24px 20px 80px;
 }
 
 /* ---- Headings ---- */
