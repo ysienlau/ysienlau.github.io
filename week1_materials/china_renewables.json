@@ -46,7 +46,7 @@
       "encode": {
         "update": {
           "strokeWidth": {"value": "2"},
-          "stroke": {"value": "#f4134d"},
+          "stroke": {"value": "#1b7f4f"},
           "description": {
             "signal": "\"date: \" + (timeFormat(datum[\"date\"], '%b %d, %Y')) + \"; value: \" + (format(datum[\"value\"], \"\"))"
           },
