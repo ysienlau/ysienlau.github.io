@@ -64,7 +64,7 @@
 
      <section>
         <div class="chart-description">
-            <h2>Challenge 1</h2>
+            <h2>Week 1</h2>
             <h3>Section 1: Adding a Chart</h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 This is an interesting chart on inflation. 
@@ -111,7 +111,7 @@
 
     <section>
         <div class="chart-description">
-            <h2>Challenge 2</h2>
+            <h2>Week 2</h2>
             <h3>Task 1: Picking and adjusting a chart from Vega-Lite examples</h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 This is a chart on penguins. Edits through Vega-Lite: (1) swapped axes; (2) wrote a new title and subtitle; (3) set custom colours for the three species; (4) changed the mark style from point to circle.
@@ -134,11 +134,15 @@
         <figure id="Location7"></figure>
     </section>
 
-
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+    <section>
+        <div class="chart-description">
+            <h2>Week 3</h2>
+            <h3>Shiller''s Data</h3>
+            <p>Is the stock market overvalued? Cleaned Shiller's dataset and created a chart</h3>
+            </p>
+        </div>
+        <figure id="Location8"></figure>
+    </section>
 
 <footer class="site-footer">
   <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a>
@@ -178,6 +182,10 @@
         let figure_7_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/milk.json";
 
         vegaEmbed('#Location7', figure_7_spec)
+
+        let figure_8_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/pe_ratio_chart.json";
+
+        vegaEmbed('#Location8', figure_8_spec)
 
     </script>
 
