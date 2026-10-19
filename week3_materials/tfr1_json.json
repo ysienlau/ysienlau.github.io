@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/tfr_aggregates.csv"},
+  "transform": [
+    {"filter": {"field": "code", "oneOf": ["EAS","ECS","LCN","MEA","NAC","SAS","SSF","WLD"]}},
+    {
+      "calculate": "{'EAS':'East Asia & Pacific','ECS':'Europe & Central Asia','LCN':'Latin America & Caribbean','MEA':'Middle East & N. Africa','NAC':'North America','SAS':'South Asia','SSF':'Sub-Saharan Africa','WLD':'World'}[datum.code]",
+      "as": "label"
+    }
+  ],
+  "width": 600,
+  "height": 350,
+  "title": {
+    "text": "Birthrates are declining globally",
+    "anchor": "start",
+    "subtitle": "Aggregated Total Fertility Rate by Region",
+    "fontSize": "14",
+    "subtitleFontSize": "12",
+    "color": "#000000",
+    "subtitleColor": "#000000"
+  },
+  "layer": [
+    {
+      "params": [{"name": "pick", "select": {"type": "point", "fields": ["label"]}, "bind": "legend"}],
+      "mark": {"type": "line", "strokeWidth": 2.5},
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [1960, 2024]},
+              "axis": {"format": "d", "title": "Year"}},
+        "y": {"field": "value", "type": "quantitative", "scale": {"domain": [0, 9]},
+              "axis": {"title": "Births per woman"}},
+        "color": {
+          "field": "label", "type": "nominal",
+          "scale": {
+            "domain": ["East Asia & Pacific","Europe & Central Asia","Latin America & Caribbean","Middle East & N. Africa","North America","South Asia","Sub-Saharan Africa","World"],
+            "range": ["#0072b2","#009e73","#e69f00","#cc79a7","#56b4e9","#8c564b","#d62728","#444444"]
+          },
+          "legend": {"title": null}
+        },
+        "strokeDash": {"condition": {"test": "datum.label === 'World'", "value": [6, 4]}, "value": [1, 0]},
+        "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.25},
+        "tooltip": [
+          {"field": "label", "title": "Group"},
+          {"field": "year", "title": "Year", "format": "d"},
+          {"field": "value", "title": "TFR", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"y": 2.1}]},
+      "mark": {"type": "rule", "strokeDash": [3, 3], "color": "#999"},
+      "encoding": {"y": {"field": "y", "type": "quantitative"}}
+    }
+  ]
+}
