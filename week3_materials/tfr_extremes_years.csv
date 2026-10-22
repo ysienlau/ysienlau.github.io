@@ -1,0 +1,121 @@
+country,code,region,tfr,group,snapshot_year
+San Marino,SMR,Europe & Central Asia,1.162,Lowest 30,1990
+"Hong Kong SAR, China",HKG,East Asia & Pacific,1.272,Lowest 30,1990
+Italy,ITA,Europe & Central Asia,1.33,Lowest 30,1990
+Spain,ESP,Europe & Central Asia,1.36,Lowest 30,1990
+Greece,GRC,Europe & Central Asia,1.39,Lowest 30,1990
+Andorra,AND,Europe & Central Asia,1.401,Lowest 30,1990
+Germany,DEU,Europe & Central Asia,1.45,Lowest 30,1990
+Austria,AUT,Europe & Central Asia,1.46,Lowest 30,1990
+Slovenia,SVN,Europe & Central Asia,1.46,Lowest 30,1990
+Liechtenstein,LIE,Europe & Central Asia,1.501,Lowest 30,1990
+Channel Islands,CHI,Europe & Central Asia,1.51,Lowest 30,1990
+Japan,JPN,East Asia & Pacific,1.54,Lowest 30,1990
+Portugal,PRT,Europe & Central Asia,1.56,Lowest 30,1990
+"Korea, Rep.",KOR,East Asia & Pacific,1.57,Lowest 30,1990
+Switzerland,CHE,Europe & Central Asia,1.58,Lowest 30,1990
+Luxembourg,LUX,Europe & Central Asia,1.6,Lowest 30,1990
+Belgium,BEL,Europe & Central Asia,1.62,Lowest 30,1990
+Netherlands,NLD,Europe & Central Asia,1.62,Lowest 30,1990
+Croatia,HRV,Europe & Central Asia,1.63,Lowest 30,1990
+Serbia,SRB,Europe & Central Asia,1.649,Lowest 30,1990
+Denmark,DNK,Europe & Central Asia,1.67,Lowest 30,1990
+Bermuda,BMU,North America,1.699,Lowest 30,1990
+"Macao SAR, China",MAC,East Asia & Pacific,1.709,Lowest 30,1990
+France,FRA,Europe & Central Asia,1.77,Lowest 30,1990
+British Virgin Islands,VGB,Latin America & Caribbean,1.779,Lowest 30,1990
+Finland,FIN,Europe & Central Asia,1.78,Lowest 30,1990
+Cayman Islands,CYM,Latin America & Caribbean,1.783,Lowest 30,1990
+Bosnia and Herzegovina,BIH,Europe & Central Asia,1.786,Lowest 30,1990
+Cuba,CUB,Latin America & Caribbean,1.806,Lowest 30,1990
+Bulgaria,BGR,Europe & Central Asia,1.82,Lowest 30,1990
+"Yemen, Rep.",YEM,"MENA, Afghanistan & Pakistan",8.606,Highest 30,1990
+Niger,NER,Sub-Saharan Africa,7.806,Highest 30,1990
+Afghanistan,AFG,"MENA, Afghanistan & Pakistan",7.576,Highest 30,1990
+"Somalia, Fed. Rep.",SOM,Sub-Saharan Africa,7.44,Highest 30,1990
+South Sudan,SSD,Sub-Saharan Africa,7.377,Highest 30,1990
+Burundi,BDI,Sub-Saharan Africa,7.365,Highest 30,1990
+Mali,MLI,Sub-Saharan Africa,7.311,Highest 30,1990
+Angola,AGO,Sub-Saharan Africa,7.272,Highest 30,1990
+Chad,TCD,Sub-Saharan Africa,7.219,Highest 30,1990
+Ethiopia,ETH,Sub-Saharan Africa,7.196,Highest 30,1990
+Uganda,UGA,Sub-Saharan Africa,7.014,Highest 30,1990
+Burkina Faso,BFA,Sub-Saharan Africa,7.009,Highest 30,1990
+West Bank and Gaza,PSE,"MENA, Afghanistan & Pakistan",6.809,Highest 30,1990
+Rwanda,RWA,Sub-Saharan Africa,6.803,Highest 30,1990
+Benin,BEN,Sub-Saharan Africa,6.741,Highest 30,1990
+Malawi,MWI,Sub-Saharan Africa,6.74,Highest 30,1990
+Cote d'Ivoire,CIV,Sub-Saharan Africa,6.719,Highest 30,1990
+"Congo, Dem. Rep.",COD,Sub-Saharan Africa,6.649,Highest 30,1990
+Sierra Leone,SLE,Sub-Saharan Africa,6.567,Highest 30,1990
+Zambia,ZMB,Sub-Saharan Africa,6.567,Highest 30,1990
+Guinea,GIN,Sub-Saharan Africa,6.515,Highest 30,1990
+Comoros,COM,Sub-Saharan Africa,6.505,Highest 30,1990
+Guinea-Bissau,GNB,Sub-Saharan Africa,6.501,Highest 30,1990
+Nigeria,NGA,Sub-Saharan Africa,6.459,Highest 30,1990
+Oman,OMN,"MENA, Afghanistan & Pakistan",6.456,Highest 30,1990
+Senegal,SEN,Sub-Saharan Africa,6.396,Highest 30,1990
+Liberia,LBR,Sub-Saharan Africa,6.37,Highest 30,1990
+Pakistan,PAK,"MENA, Afghanistan & Pakistan",6.364,Highest 30,1990
+Cameroon,CMR,Sub-Saharan Africa,6.362,Highest 30,1990
+Eritrea,ERI,Sub-Saharan Africa,6.338,Highest 30,1990
+"Macao SAR, China",MAC,East Asia & Pacific,0.582,Lowest 30,2024
+"Korea, Rep.",KOR,East Asia & Pacific,0.748,Lowest 30,2024
+"Hong Kong SAR, China",HKG,East Asia & Pacific,0.841,Lowest 30,2024
+Puerto Rico (US),PRI,Latin America & Caribbean,0.92,Lowest 30,2024
+Singapore,SGP,East Asia & Pacific,0.97,Lowest 30,2024
+Ukraine,UKR,Europe & Central Asia,0.988,Lowest 30,2024
+Malta,MLT,"MENA, Afghanistan & Pakistan",1.01,Lowest 30,2024
+China,CHN,East Asia & Pacific,1.013,Lowest 30,2024
+British Virgin Islands,VGB,Latin America & Caribbean,1.048,Lowest 30,2024
+Andorra,AND,Europe & Central Asia,1.087,Lowest 30,2024
+Spain,ESP,Europe & Central Asia,1.1,Lowest 30,2024
+Lithuania,LTU,Europe & Central Asia,1.11,Lowest 30,2024
+Poland,POL,Europe & Central Asia,1.14,Lowest 30,2024
+Chile,CHL,Latin America & Caribbean,1.14,Lowest 30,2024
+Japan,JPN,East Asia & Pacific,1.15,Lowest 30,2024
+San Marino,SMR,Europe & Central Asia,1.158,Lowest 30,2024
+Italy,ITA,Europe & Central Asia,1.18,Lowest 30,2024
+Estonia,EST,Europe & Central Asia,1.18,Lowest 30,2024
+Thailand,THA,East Asia & Pacific,1.204,Lowest 30,2024
+United Arab Emirates,ARE,"MENA, Afghanistan & Pakistan",1.213,Lowest 30,2024
+Belarus,BLR,Europe & Central Asia,1.217,Lowest 30,2024
+Greece,GRC,Europe & Central Asia,1.24,Lowest 30,2024
+Latvia,LVA,Europe & Central Asia,1.24,Lowest 30,2024
+Canada,CAN,North America,1.25,Lowest 30,2024
+Luxembourg,LUX,Europe & Central Asia,1.25,Lowest 30,2024
+Finland,FIN,Europe & Central Asia,1.25,Lowest 30,2024
+Switzerland,CHE,Europe & Central Asia,1.29,Lowest 30,2024
+Austria,AUT,Europe & Central Asia,1.31,Lowest 30,2024
+Costa Rica,CRI,Latin America & Caribbean,1.318,Lowest 30,2024
+Albania,ALB,Europe & Central Asia,1.341,Lowest 30,2024
+Comoros,COM,Sub-Saharan Africa,3.822,Highest 30,2024
+Liberia,LBR,Sub-Saharan Africa,3.864,Highest 30,2024
+"Gambia, The",GMB,Sub-Saharan Africa,3.907,Highest 30,2024
+Ethiopia,ETH,Sub-Saharan Africa,3.909,Highest 30,2024
+Madagascar,MDG,Sub-Saharan Africa,3.912,Highest 30,2024
+Zambia,ZMB,Sub-Saharan Africa,4.036,Highest 30,2024
+"Congo, Rep.",COG,Sub-Saharan Africa,4.109,Highest 30,2024
+Burkina Faso,BFA,Sub-Saharan Africa,4.11,Highest 30,2024
+Equatorial Guinea,GNQ,Sub-Saharan Africa,4.116,Highest 30,2024
+Togo,TGO,Sub-Saharan Africa,4.122,Highest 30,2024
+Guinea,GIN,Sub-Saharan Africa,4.131,Highest 30,2024
+Uganda,UGA,Sub-Saharan Africa,4.165,Highest 30,2024
+Cote d'Ivoire,CIV,Sub-Saharan Africa,4.23,Highest 30,2024
+Cameroon,CMR,Sub-Saharan Africa,4.261,Highest 30,2024
+Sudan,SDN,Sub-Saharan Africa,4.264,Highest 30,2024
+Nigeria,NGA,Sub-Saharan Africa,4.382,Highest 30,2024
+Benin,BEN,Sub-Saharan Africa,4.48,Highest 30,2024
+"Yemen, Rep.",YEM,"MENA, Afghanistan & Pakistan",4.499,Highest 30,2024
+Tanzania,TZA,Sub-Saharan Africa,4.541,Highest 30,2024
+Mauritania,MRT,Sub-Saharan Africa,4.625,Highest 30,2024
+Mozambique,MOZ,Sub-Saharan Africa,4.69,Highest 30,2024
+Afghanistan,AFG,"MENA, Afghanistan & Pakistan",4.761,Highest 30,2024
+Burundi,BDI,Sub-Saharan Africa,4.789,Highest 30,2024
+Angola,AGO,Sub-Saharan Africa,5.048,Highest 30,2024
+Mali,MLI,Sub-Saharan Africa,5.51,Highest 30,2024
+Niger,NER,Sub-Saharan Africa,5.935,Highest 30,2024
+Central African Republic,CAF,Sub-Saharan Africa,5.954,Highest 30,2024
+"Congo, Dem. Rep.",COD,Sub-Saharan Africa,5.981,Highest 30,2024
+"Somalia, Fed. Rep.",SOM,Sub-Saharan Africa,6.013,Highest 30,2024
+Chad,TCD,Sub-Saharan Africa,6.028,Highest 30,2024
