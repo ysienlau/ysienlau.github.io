@@ -8,19 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
     <link rel="stylesheet" type="text/css" href="Stylesheet_portfolio.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+    <title>My Portfolio</title> 
 
-    <!-- This is a link to the vega-lite packages which we're using to make graphs -->
     <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 
     <style>
-        /* CSS styles can be defined here, or in a separate CSS file */
         #chartGrid {
             display: flex;
         }
@@ -36,12 +31,11 @@
             <a href="index.html">Home</a>
         </nav>
     </header>
-<!-- The body tag contains the elements that visitors to our page will see. -->
     <h1 class="big" style="margin-bottom: 0px;">
-        PP434 Exercises
+        PP434 Portfolio
     </h1>
 
-    <p> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
+    <p>
         Portfolio for the Automated Data Visualisation Class (PP434) at LSE (Autumn Term, 2026/2027)
     </p>
 
@@ -49,7 +43,7 @@
         <div class="chart-description">
             <h2>Challenge 1: Displaying charts in your own site</h2>
             <h3>Part 1: Adding a chart using Vega-Embed</h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            <p> 
                 This is a chart on inflation.
                 Chart from Richard Davies Economist Github Chart Library
                 Data Source: OECD
@@ -62,7 +56,7 @@
     <section>
         <div class="chart-description">
             <h3>Part 2: Second chart using Vega-Embed</h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            <p> 
                 This is an interesting chart on how official inflation is measured.
                 Chart from Richard Davies Economist Github Chart Library
                 Data Source: CPIH
@@ -86,7 +80,7 @@
     <section>
         <div class="chart-description">
             <h3>Chart 2: The UK's Renewable Energy Output </h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            <p> 
                 Created through the Economics Observatory Data Hub
             </p>
         </div>
@@ -107,9 +101,7 @@
   <a href="https://github.com/ysienlau">GitHub</a>
 </footer>
 
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
         
         let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json";
 
@@ -126,12 +118,6 @@
         let figure_5_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week1_materials/uk_renewables.json";
 
         vegaEmbed('#Location5', figure_5_spec)
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
-        // e.g. 
-        // let figure_2_spec = ...
-        // vegaEmbed('#Location2', figure_2_spec)
 
         let figure_6_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/tfr1.json";
 
