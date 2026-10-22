@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": {"expr": "'Where are the 30 lowest and 30 highest birth rates? ' + year_pick"},
+    "anchor": "start", "fontSize": 14
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/tfr_extremes_years.csv",
+    "format": {"type": "csv", "parse": {"snapshot_year": "number", "tfr": "number"}}
+  },
+  "params": [{
+    "name": "year_pick",
+    "value": 2024,
+    "bind": {"input": "radio", "options": [1990, 2024], "name": "Year: "}
+  }],
+  "transform": [{"filter": "datum.snapshot_year == year_pick"}],
+  "width": 300,
+  "height": 350,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "group", "type": "nominal",
+      "sort": ["Lowest 30", "Highest 30"], "title": null,
+      "axis": {"labelAngle": 0, "labelFontSize": 13}
+    },
+    "y": {
+      "aggregate": "count", "type": "quantitative",
+      "title": "Number of countries", "scale": {"domain": [0, 30]}
+    },
+    "color": {
+      "field": "region", "type": "nominal", "title": "Region",
+      "scale": {
+        "domain": ["East Asia & Pacific", "Europe & Central Asia", "Latin America & Caribbean",
+                   "MENA, Afghanistan & Pakistan", "North America", "South Asia", "Sub-Saharan Africa"],
+        "range": ["#0072b2", "#009e73", "#e69f00", "#cc79a7", "#56b4e9", "#8c564b", "#d62728"]
+      }
+    },
+    "tooltip": [
+      {"field": "group", "title": "Group"},
+      {"field": "region", "title": "Region"},
+      {"aggregate": "count", "title": "Countries"}
+    ]
+  }
+}
