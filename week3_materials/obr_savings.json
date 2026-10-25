@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "OBR costing of removing the two-child limit",
-    "subtitle": ["Predicted amount saved every year with the two-child limit (in £ billion), Great Britain.",
-      "Source: OBR, Economic and fiscal outlook, Nov 2025 (DWP and OBR)."],
+    "text": "Predicted savings every year with the two-child limit",
+    "subtitle": ["Savings in £ billion per year, Great Britain.",
+      "Source: OBR, Economic and fiscal outlook, Nov 2025 (Department for Work and Pensions and the Office for Budget Responsibility)."],
     "subtitleColor": "#323131",
     "anchor": "start",
     "fontSize": 15
