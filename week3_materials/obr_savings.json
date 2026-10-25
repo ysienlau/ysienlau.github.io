@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "OBR costing of removing the two-child limit",
+    "subtitle": ["Predicted amount saved every year with the two-child limit (in £ billion), Great Britain.",
+      "Source: OBR, Economic and fiscal outlook, Nov 2025 (DWP and OBR)."],
+    "subtitleColor": "#323131",
+    "anchor": "start",
+    "fontSize": 15
+  },
+  "width": 460,
+  "height": 300,
+  "layer": [
+    {
+      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/obr_two_child_limit_savings.csv"},
+      "transform": [
+        {"filter": "datum['£ billion unless stated'] === 'Static costing' || datum['£ billion unless stated'] === 'Direct behavioural response from higher take-up'"},
+        {"calculate": "datum['£ billion unless stated'] === 'Static costing' ? 'Static costing' : 'Higher take-up (behavioural response)'", "as": "component"},
+        {"fold": ["2026-27", "2027-28", "2028-29", "2029-30", "2030-31"], "as": ["period", "raw_cost"]},
+        {"calculate": "replace(datum.period, '-', '/')", "as": "fyear"},
+        {"calculate": "toNumber(datum.raw_cost)", "as": "cost"}
+      ],
+      "mark": {"type": "bar", "width": 54},
+      "encoding": {
+        "x": {"field": "fyear", "type": "ordinal", "title": "Financial year", "axis": {"labelAngle": 0},
+              "scale": {"domain": ["2026/27", "2027/28", "2028/29", "2029/30", "2030/31"]}},
+        "y": {"field": "cost", "type": "quantitative", "title": "£ billion", "stack": "zero", "scale": {"domain": [0, 3.5]}},
+        "color": {
+          "field": "component", "type": "nominal", "title": null,
+          "scale": {"domain": ["Static costing", "Higher take-up (behavioural response)"], "range": ["#d62728", "#f2a5a5"]},
+          "legend": {"orient": "bottom", "labelLimit": 300}
+        },
+        "order": {"field": "component", "type": "nominal", "sort": "descending"},
+        "tooltip": [
+          {"field": "fyear", "title": "Financial year"},
+          {"field": "component", "title": "Component"},
+          {"field": "cost", "title": "£ billion", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/obr_two_child_limit_savings.csv"},
+      "transform": [
+        {"filter": "datum['£ billion unless stated'] === 'Post-behavioural costing'"},
+        {"fold": ["2026-27", "2027-28", "2028-29", "2029-30", "2030-31"], "as": ["period", "raw_cost"]},
+        {"calculate": "replace(datum.period, '-', '/')", "as": "fyear"},
+        {"calculate": "toNumber(datum.raw_cost)", "as": "cost"}
+      ],
+      "mark": {"type": "text", "dy": -8, "fontSize": 12, "fontWeight": "bold"},
+      "encoding": {
+        "x": {"field": "fyear", "type": "ordinal",
+              "scale": {"domain": ["2026/27", "2027/28", "2028/29", "2029/30", "2030/31"]}},
+        "y": {"field": "cost", "type": "quantitative"},
+        "text": {"field": "cost", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
