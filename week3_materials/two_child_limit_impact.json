@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Households affected by the two-child limit, Great Britain",
+    "subtitle": ["Households with a third or later child born on or after 6 April 2017. Data is from April each year.", "Note: chart includes households on the Child Tax Credit scheme, which ended in 2025.","Source: DWP, UC statistics on the Two Child Limit, April 2025."],
+    "subtitleColor": "#212020",
+    "anchor": "start",
+    "fontSize": 15
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/two_child_limit_households.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "households": "number"}}
+  },
+  "width": 520,
+  "height": 300,
+  "mark": {"type": "bar", "width": 40},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "April of each year", "axis": {"labelAngle": 0}},
+    "y": {"field": "households", "type": "quantitative", "title": "Affected households",
+          "axis": {"format": ",.0f"}, "stack": "zero"},
+    "color": {
+      "field": "benefit", "type": "nominal", "title": null,
+      "scale": {"domain": ["Child Tax Credit", "Universal Credit"], "range": ["#f0b986", "#b25600"]},
+      "legend": {"orient": "bottom"}
+    },
+    "order": {"field": "benefit", "type": "nominal", "sort": "descending"},
+    "tooltip": [
+      {"field": "year", "title": "April"},
+      {"field": "benefit", "title": "Benefit"},
+      {"field": "households", "title": "Households", "format": ",.0f"}
+    ]
+  },
+  "config": {"view": {"stroke": null}}}
