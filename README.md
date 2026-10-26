@@ -12,7 +12,7 @@ I'm now combining that policy background with data science to work on questions 
 
 ## Featured work
 
-### Frontier Industry Potential in South Yorkshire: group project with LSE Growth Lab
+### Frontier Industry Potential in South Yorkshire: group project (Data Science for Public Policy) - presented to the LSE Growth Lab
 Which local conditions are correlated with the UK Industrial Strategy's high-growth (IS-8) sectors, and what should South Yorkshire do about it? We analysed 355 English local authorities and 171 South Yorkshire neighbourhoods using ONS and Nomis data (2019–2024).
 
 - **Methods:** lasso and elastic net for variable selection, PCA and k-means clustering to compare regions, and spatial clustering analysis (Moran's I, LISA)
