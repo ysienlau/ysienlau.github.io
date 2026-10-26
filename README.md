@@ -2,7 +2,7 @@
 
 **About Me**
 
-I'm an MPA candidate in Data Science for Public Policy at the London School of Economics (2025–2027). Before LSE, I spent five years in government affairs and policy research across Southeast Asia, at Bosch, Vriens & Partners and the Institute of Policy Studies in Singapore, turning regulatory and political developments into analysis and recommendations for senior decision-makers.
+I'm an MPA candidate in Data Science for Public Policy at the London School of Economics (2025–2027). Before LSE, I spent five years in government affairs and policy research across Southeast Asia, turning regulatory and political developments into analysis and recommendations for senior decision-makers.
 
 I'm now combining that policy background with data science to work on questions where analytical rigour and stakeholder insight both matter.
 
