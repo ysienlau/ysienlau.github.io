@@ -33,8 +33,6 @@ Weekly challenges in building, publishing and critiquing charts with Vega-Lite, 
 
 ## Skills
 
-## Skills
-
 - **Data analysis:** Python (pandas, NumPy, scikit-learn), Stata; working with JSON/API data
 - **Visualisation:** Vega-Lite, Matplotlib, Seaborn, plotnine
 - **Statistical methods:** regression analysis, causal inference, data cleaning, spatial analysis (Moran's I)
