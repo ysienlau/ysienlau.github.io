@@ -4,8 +4,6 @@
 
 I'm an MPA candidate in Data Science for Public Policy at the London School of Economics (2025–2027), and hold a BA (Hons) in History from Yale-NUS College (2016-2020). Before LSE, I spent five years in government affairs and policy research (with a focus on Singapore and Southeast Asia), turning regulatory and political developments into analysis and recommendations for senior decision-makers.
 
-I'm now combining that policy background with data science to work on questions where analytical rigour and stakeholder insight both matter.
-
 **Website:** [ysienlau.github.io](https://ysienlau.github.io) · **LinkedIn:** [ysien-lau](https://www.linkedin.com/in/ysien-lau)
 
 ---
