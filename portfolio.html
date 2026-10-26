@@ -111,8 +111,16 @@
     </section>
         <div class="chart-description">
             <h2>Challenge 4: Replication. Re-create, then improve, another chart</h2>
+            <h3>Original Chart</h3>
+    </section>
+    <section>
             <img src="week4_materials/FT_tax_chart.png" alt="Source: FT" width="600">
-            
+    </section>
+    <section>
+        <div class="chart-description">
+            <h3>Recreation with VegaLite</h3>
+            </div>
+        <figure id="Location8"></figure>        
 
     <section>
         
@@ -148,6 +156,10 @@
         let figure_7_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/obr_savings.json";
 
         vegaEmbed('#Location7', figure_7_spec)
+
+        let figure_8_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week4_materials/FT_tax_recreation.json";
+
+        vegaEmbed('#Location8', figure_8_spec)
 
     </script>
 
