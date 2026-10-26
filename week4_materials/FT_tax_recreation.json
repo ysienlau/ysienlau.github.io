@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 700,
+  "height": {"step": 20},
+  "background": "#FFF1E5",
+  "padding": {"top": 30, "left": 20, "right": 20, "bottom": 30},
+  "title": {
+    "text": "UK income tax for high earners are relatively high",
+    "subtitle": "Average income tax rate, Percentage of gross wage earnings, 2025",
+    "anchor": "start",
+    "fontSize": 20,
+    "fontWeight": "normal",
+    "color": "#33302E",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleFontSize": 16,
+    "subtitleColor": "#66605C",
+    "subtitlePadding": 15,
+    "align": "left",
+    "offset": 20},
+  "config": {"view": {"stroke": null}},
+  "data": {
+    "values": [
+      {"category": "Single person, no children, 167% of average wage", "group": "UK", "value": 26.5},
+      {"category": "Single person, no children, 167% of average wage", "group": "OECD", "value": 21.2},
+      {"category": "Single person, no children, 100% of average wage", "group": "UK", "value": 17.5},
+      {"category": "Single person, no children, 100% of average wage", "group": "OECD", "value": 15.5},
+      {"category": "Couple, 2 children - principal 100%, spouse 100%", "group": "UK", "value": 17.5},
+      {"category": "Couple, 2 children - principal 100%, spouse 100%", "group": "OECD", "value": 14.3},
+      {"category": "Couple, 2 children - principal 100%, spouse no earning", "group": "UK", "value": 17.5},
+      {"category": "Couple, 2 children - principal 100%, spouse no earning", "group": "OECD", "value": 11},
+      {"category": "Couple, no children - principal 100%, spouse 67%", "group": "UK", "value": 15.8},
+      {"category": "Couple, no children - principal 100%, spouse 67%", "group": "OECD", "value": 13.7},
+      {"category": "Couple, 2 children - principal 100%, spouse 67%", "group": "UK", "value": 15.8},
+      {"category": "Couple, 2 children - principal 100%, spouse 67%", "group": "OECD", "value": 12.2},
+      {"category": "Single person, no children, 67% of average wage", "group": "UK", "value": 13.3},
+      {"category": "Single person, no children, 67% of average wage", "group": "OECD", "value": 11.1}
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {
+        "title": null,
+        "values": [0, 5, 10, 15, 20, 25],
+        "grid": true,
+        "gridColor": "#e9ded3",
+        "ticks": false,
+        "domain": false,
+        "labelFontSize": 14,
+        "labelColor": "#33302E"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "height": {"band": 0.7}, "stroke": "#c3c1bf", "strokeWidth": 0.6},
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": null,
+          "scale": {"paddingInner": 0.4, "paddingOuter": 0.1},
+          "axis": {"title": null, "labels": false, "ticks": false, "domainColor": "#66605C"}
+        },
+        "yOffset": {
+          "field": "group",
+          "sort": ["UK", "OECD"],
+          "scale": {"paddingInner": 0.1, "paddingOuter": 0.1}
+        },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {"domain": ["UK", "OECD"], "range": ["#2E5389", "#A0CFE3"]},
+      "legend": {
+        "orient": "top",
+        "direction": "horizontal",
+        "title": null,
+        "labelFontSize": 14,
+        "symbolType": "square"
+  }
+}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.group == 'UK'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dy": 8,
+        "dx": 2,
+        "fontSize": 12,
+        "color": "#5f5e5d"
+      },
+      "encoding": {
+        "x": {"value": 0},
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": null,
+          "bandPosition": 0
+        },
+        "text": {"field": "category"}
+      }
+    }
+  ]
+}
