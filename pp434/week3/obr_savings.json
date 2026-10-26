@@ -12,7 +12,7 @@
   "height": 300,
   "layer": [
     {
-      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/obr_two_child_limit_savings.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week3/obr_two_child_limit_savings.csv"},
       "transform": [
         {"filter": "datum['£ billion unless stated'] === 'Static costing' || datum['£ billion unless stated'] === 'Direct behavioural response from higher take-up'"},
         {"calculate": "datum['£ billion unless stated'] === 'Static costing' ? 'Static costing' : 'Higher take-up (behavioural response)'", "as": "component"},
@@ -39,7 +39,7 @@
       }
     },
     {
-      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/obr_two_child_limit_savings.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week3/obr_two_child_limit_savings.csv"},
       "transform": [
         {"filter": "datum['£ billion unless stated'] === 'Post-behavioural costing'"},
         {"fold": ["2026-27", "2027-28", "2028-29", "2029-30", "2030-31"], "as": ["period", "raw_cost"]},

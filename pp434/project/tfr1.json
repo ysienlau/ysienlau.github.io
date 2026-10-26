@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/tfr_aggregates.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/project/tfr_aggregates.csv"},
   "transform": [
     {"filter": {"field": "code", "oneOf": ["EAS","ECS","LCN","MEA","NAC","SAS","SSF","WLD"]}},
     {

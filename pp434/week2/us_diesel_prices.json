@@ -1,7 +1,7 @@
 {
 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 "data": {
-"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/usdieselprices.csv"
+"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week2/usdieselprices.csv"
 },
 "title": {
 "text": "US Diesel Prices"

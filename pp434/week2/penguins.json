@@ -5,7 +5,7 @@
     "text": "Comparing the body mass and flipper lengths of 3 species of penguins",
     "subtitle": "Scatterplot"
   },
-  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week2_materials/penguindata.json"},
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week2/penguindata.json"},
   "mark": {"type": "circle"},
   "encoding": {
     "y": {

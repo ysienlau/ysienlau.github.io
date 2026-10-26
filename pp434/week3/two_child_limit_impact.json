@@ -8,7 +8,7 @@
     "fontSize": 15
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/week3_materials/two_child_limit_households.csv",
+    "url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week3/two_child_limit_households.csv",
     "format": {"type": "csv", "parse": {"year": "number", "households": "number"}}
   },
   "width": 520,

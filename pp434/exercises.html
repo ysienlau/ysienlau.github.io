@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html> 
+
+<head>    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/portfolio.css">
+    <title>My Portfolio</title> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
+
+</head>
+
+<body> 
+    <header class="topbar">
+        <span class="brand">Ysien Lau</span>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+    </header>
+    <h1 class="big" style="margin-bottom: 0px;">
+        PP434 Class Exercises
+    </h1>
+
+    <p> 
+        Exercises for the Automated Data Visualisation Class (PP434) at LSE (Autumn Term, 2026/2027)
+    </p>
+
+     <section>
+        <div class="chart-description">
+            <h2>Week 1</h2>
+            <h3>Section 1: Adding a Chart</h3>
+            <p> This is an interesting chart on inflation. 
+                Source: OECD
+            </p>
+        </div>
+        <figure id="Location2"></figure>
+
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>Section 2: One more chart!</h3>
+            <p> 
+                This is an interesting chart on how official inflation is measured. Why hotels???
+                Source: CPIH
+            </p>
+        </div>
+        <figure id="Location3"></figure>
+
+    </section>
+
+        <section>
+        <div class="chart-description">
+            <h3>Section 3: China's Renewable Energy Output </h3>
+            <p> 
+                Created through the Economics Observatory Data Hub
+            </p>
+        </div>
+        <figure id="Location4"></figure>
+
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>Section 4: The UK's Renewable Energy Output </h3>
+            <p> 
+                Created through the Economics Observatory Data Hub
+            </p>
+        </div>
+        <figure id="Location5"></figure>
+
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Week 2</h2>
+            <h3>Task 1: Picking and adjusting a chart from Vega-Lite examples</h3>
+            <p> 
+                This is a chart on penguins. Edits through Vega-Lite: (1) swapped axes; (2) wrote a new title and subtitle; (3) set custom colours for the three species; (4) changed the mark style from point to circle.
+                Source: Vega datasets / Palmer Penguins
+            </p>
+        </div>
+        <figure id="Location6"></figure>
+
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>Task 2: Creating a chart using time series data from ONS</h3>
+            <p> 
+                Finding a time series dataset and making edits to various chart features. Saved the csv file from ONS (cleaned the dataset and changed headings).
+                Then I created a simple line chart, added a title and set fixed width and height, renamed the y-axis title, italicised both axis titles, changed the colour of the line.
+                Source: The Office of National Statistics
+            </p>
+        </div>
+        <figure id="Location7"></figure>
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Week 3</h2>
+            <h3>Shiller''s Data</h3>
+            <p>Is the stock market overvalued? Cleaned Shiller's dataset and created a chart</h3>
+            </p>
+        </div>
+        <figure id="Location8"></figure>
+    </section>
+
+<footer class="site-footer">
+  <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a>
+  <a href="https://github.com/ysienlau">GitHub</a>
+</footer>
+    <script>
+        
+        let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json";
+
+        vegaEmbed('#Location2', figure_2_spec)
+
+        let figure_3_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartBar8.json";
+
+        vegaEmbed('#Location3', figure_3_spec)
+
+        let figure_4_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week1/china_renewables.json";
+
+        vegaEmbed('#Location4', figure_4_spec)
+
+        let figure_5_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week1/uk_renewables.json";
+
+        vegaEmbed('#Location5', figure_5_spec)
+
+        let figure_6_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week2/penguins.json";
+
+        vegaEmbed('#Location6', figure_6_spec)
+
+        let figure_7_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week2/milk.json";
+
+        vegaEmbed('#Location7', figure_7_spec)
+
+        let figure_8_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week3/pe_ratio_chart.json";
+
+        vegaEmbed('#Location8', figure_8_spec)
+
+    </script>
+
+</body>
+    
+</html>
