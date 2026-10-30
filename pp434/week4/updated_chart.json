@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": {"step": 40},
+  "height": 350,
+  "background": "#f3f3f3",
+  "padding": {"top": 30, "left": 20, "right": 20, "bottom": 30},
+  "title": {
+    "text": "UK income tax for high earners are relatively high compared to the OECD average",
+    "subtitle": [
+      "Average income tax rate, percentage of gross wage earnings, 2025",
+      "Source: OECD"
+    ],
+    "anchor": "start",
+    "fontSize": 20,
+    "fontWeight": "normal",
+    "color": "#33302E",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleFontSize": 16,
+    "subtitleColor": "#66605C",
+    "subtitlePadding": 15,
+    "offset": 20
+  },
+  "config": {"view": {"stroke": null}},
+  "data": {
+    "values": [
+      {"category": "Single no kids, 167% of avg", "group": "UK", "value": 26.5},
+      {"category": "Single no kids, 167% of avg", "group": "OECD", "value": 21.2},
+      {"category": "Single no kids, 100% of avg", "group": "UK", "value": 17.5},
+      {"category": "Single no kids, 100% of avg", "group": "OECD", "value": 15.5},
+      {"category": "Couple 2 kids, 100% + 100%", "group": "UK", "value": 17.5},
+      {"category": "Couple 2 kids, 100% + 100%", "group": "OECD", "value": 14.3},
+      {"category": "Couple 2 kids, 100% + 0%", "group": "UK", "value": 17.5},
+      {"category": "Couple 2 kids, 100% + 0%", "group": "OECD", "value": 11},
+      {"category": "Couple no kids, 100% + 67%", "group": "UK", "value": 15.8},
+      {"category": "Couple no kids, 100% + 67%", "group": "OECD", "value": 13.7},
+      {"category": "Couple 2 kids, 100% + 67%", "group": "UK", "value": 15.8},
+      {"category": "Couple 2 kids, 100% + 67%", "group": "OECD", "value": 12.2},
+      {"category": "Single no kids, 67% of avg", "group": "UK", "value": 13.3},
+      {"category": "Single no kids, 67% of avg", "group": "OECD", "value": 11.1}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "width": {"band": 0.7}},
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "sort": null,
+          "scale": {"paddingInner": 0.1, "paddingOuter": 0.1},
+          "axis": {
+            "title": "Category",
+            "ticks": false,
+            "titlePadding": 15,
+            "domainColor": "#66605C",
+            "labelAngle": 0,
+            "labelLimit": 85,
+            "labelFontSize": 12,
+            "labelColor": "#33302E",
+            "labelExpr": "split(datum.label, ', ')"
+          }
+        },
+        "xOffset": {"field": "group", "sort": ["UK", "OECD"],"scale": {"paddingInner": 0}},
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": {
+            "title": "Average Income Tax Rate (%)",
+            "values": [0, 5, 10, 15, 20, 25],
+            "titlePadding": 15,
+            "labelExpr": "datum.value + '%'",
+            "grid": true,
+            "ticks": false,
+            "domain": false,
+            "labelFontSize": 12,
+            "labelColor": "#33302E",
+          }
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {"domain": ["UK", "OECD"], "range": ["#990F3D", "#B8B2AC"]},
+          "legend": {
+            "orient": "none",
+            "legendX": -80,
+            "legendY": -25,
+            "direction": "horizontal",
+            "title": null,
+            "labelFontSize": 14,
+            "symbolType": "square"
+          }
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -4, "dx": 6, "fontSize": 12, "color": "#33302E"},
+      "encoding": {
+        "x": {"field": "category", "type": "nominal", "sort": null},
+        "xOffset": {"field": "group", "sort": ["UK", "OECD"], "scale": {"paddingInner": 0.1, "paddingOuter": 0.1}},
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "value", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ]
+}
