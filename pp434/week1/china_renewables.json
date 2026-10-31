@@ -4,6 +4,7 @@
   "background": "#ffffff",
   "padding": 5,
   "height": 250,
+  "width": 500,
   "title": {
     "text": "China's Renewable Energy Output",
     "anchor": "start",
