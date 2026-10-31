@@ -73,7 +73,7 @@
             "ticks": false,
             "domain": false,
             "labelFontSize": 12,
-            "labelColor": "#33302E",
+            "labelColor": "#33302E"
           }
         },
         "color": {
@@ -93,10 +93,10 @@
       }
     },
     {
-      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -4, "dx": 6, "fontSize": 12, "color": "#33302E"},
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -4, "dx": 5, "fontSize": 12, "color": "#33302E"},
       "encoding": {
-        "x": {"field": "category", "type": "nominal", "sort": null},
-        "xOffset": {"field": "group", "sort": ["UK", "OECD"], "scale": {"paddingInner": 0.1, "paddingOuter": 0.1}},
+        "x": {"field": "category", "type": "nominal", "sort": null, "scale": {"paddingInner": 0.1, "paddingOuter": 0.1}},
+        "xOffset": {"field": "group", "sort": ["UK", "OECD"], "scale": {"paddingInner": 0}},
         "y": {"field": "value", "type": "quantitative"},
         "text": {"field": "value", "type": "quantitative", "format": ".1f"}
       }
