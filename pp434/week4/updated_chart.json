@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": {"step": 40},
   "height": 350,
-  "background": "#f3f3f3",
+  "background": "#ffffff",
   "padding": {"top": 30, "left": 20, "right": 20, "bottom": 30},
   "title": {
     "text": "UK income tax for high earners are relatively high compared to the OECD average",
