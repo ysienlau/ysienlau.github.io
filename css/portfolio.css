@@ -170,3 +170,56 @@ img {
 .site-footer a:hover {
   color: var(--coral);
 }
+
+.toc {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+  background: var(--paper);
+  padding: 14px 18px;
+  width: 180px;
+  z-index: 10;
+}
+
+.toc-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc ul li {
+  margin-bottom: 6px;
+}
+
+.toc ul li a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.toc ul li a:hover {
+  color: var(--coral);
+}
+
+/* Make room for the TOC on wide screens */
+@media (min-width: 1100px) {
+  body {
+    padding-right: 240px;
+  }
+}
+
+/* Hide the TOC on narrow screens */
+@media (max-width: 1099px) {
+  .toc {
+    display: none;
+  }
+}
