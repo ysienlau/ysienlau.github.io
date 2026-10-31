@@ -3,8 +3,8 @@
   "autosize": {"type": "fit", "contains": "padding", "resize": false},
   "background": "#ffffff",
   "padding": 5,
-  "height": 250,
-  "width": 500,
+  "height": 300,
+  "width": 600,
   "title": {
     "text": "China's Renewable Energy Output",
     "anchor": "start",
@@ -23,18 +23,6 @@
       "name": "source_0",
       "url": "https://api.economicsobservatory.com/chn/rGWh?vega",
       "format": {"type": "json", "parse": {"date": "date"}}
-    }
-  ],
-  "signals": [
-    {
-      "name": "width",
-      "init": "isFinite(containerSize()[0]) ? containerSize()[0] : 200",
-      "on": [
-        {
-          "update": "isFinite(containerSize()[0]) ? containerSize()[0] : 200",
-          "events": "window:resize"
-        }
-      ]
     }
   ],
   "marks": [
