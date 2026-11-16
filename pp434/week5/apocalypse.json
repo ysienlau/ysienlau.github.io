@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Predicted end-of-the-world dates, 1500–2025",
+    "subtitle": "By predicted year. Source: Wikipedia. Categories assigned by keyword",
+    "anchor": "start",
+    "color": "#3b2a1a",
+    "subtitleColor": "#7a6a58",
+    "fontSize": 17,
+    "subtitleFontSize": 12,
+    "offset": 12
+  },
+  "width": 600,
+  "height": 320,
+  "padding": 16,
+  "background": "#f6efe3",
+  "data": {"url": "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week5/apocalypse_predictions.csv"},
+  "transform": [{"filter": "datum.year >= 1500 && datum.year <= 2025"}],
+  "mark": {"type": "bar", "stroke": "#f6efe3", "strokeWidth": 1},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "bin": {"step": 25},
+      "axis": {"title": "Predicted year (25-year bins)", "format": "d"}
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "axis": {"title": "Predictions", "tickMinStep": 1}
+    },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "legend": {"title": "Type"},
+      "scale": {
+        "domain": ["Religious", "Astronomical", "War / technology", "Other"],
+        "range": ["#6b4226", "#d4a017", "#9b2226", "#8d867c"]
+      }
+    },
+    "tooltip": [
+      {"field": "type", "title": "Type"},
+      {"aggregate": "count", "title": "Predictions"}
+    ]
+  },
+  "config": {
+    "font": "Georgia, 'Times New Roman', serif",
+    "view": {"stroke": null},
+    "axis": {
+      "labelColor": "#5c4a38",
+      "titleColor": "#5c4a38",
+      "gridColor": "#e6dcc8",
+      "domainColor": "#b9a98f",
+      "tickColor": "#b9a98f"
+    },
+    "legend": {
+      "labelColor": "#5c4a38",
+      "titleColor": "#5c4a38"
+    }
+  }
+}
