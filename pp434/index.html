@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/portfolio.css">
     <title>My Portfolio</title> 
 
@@ -32,6 +33,7 @@
             <li><a href="#challenge-2">Challenge 2</a></li>
             <li><a href="#challenge-3">Challenge 3</a></li>
             <li><a href="#challenge-4">Challenge 4</a></li>
+            <li><a href="#challenge-5">Challenge 5</a></li>
             </ul>
     </nav>
     <header class="topbar">
@@ -144,6 +146,31 @@
         <figure id="Location9"></figure>       
     </section>
 
+    <section>
+        <div class="chart-description">
+            <h2 id="challenge-5">Challenge 5: Accessing Data: </h2>
+            <p class = "subheader"> API task and Scraper Task </p>
+            <h3>Chart 1: Musical instruments at the Met, by century made</h3>
+            <p>Base URL: https://collectionapi.metmuseum.org/public/collection/v1.1/search</p>
+            <p>Parameters used: departmentId=18 (18 is for musical instruments), dateBegin, dateEnd, and limit = 1</p>
+            <p>No key was required, and the url returned the JSON of {total, objectIDs}. It is not tidy and I only used total.</p> 
+            <p>Originally, I hoped to also include ObjectName (which indicates the type of each instruments), but the category of 'other' overwhelmed all the others, which made the visualisation less interesting. 
+                In the end, I thought it was best to focus on the key takeaway: that almost half of the musical instruments at the Met were made in the 19th century.</p>
+            </div>
+        <figure id="Location10"></figure>
+    </section> 
+
+    <section>
+        <div class="chart-description"></div>
+        <h3>Chart 2: Scraping data on predicted apocalyptic events</h3>
+        <p>- Scraped data from Wikipedia on predicted apocalyptic events and created a tidy dataset, grouping the events into 4 different categories based on specific words</p>
+        <p>- A key challenge was cleaning the data (standardising text cells using regex and dates which had different formats), and making of events based on specific key words, to create a clean csv file with year, claimants, description, year, decade (to group events by decade for clearer visualisation), and type</p>
+        <p><a href="https://colab.research.google.com/drive/1fj2hM23WU2q6m2RFXQbQEn5rpiWepziC?usp=sharing">Colab Notebook can be found here</a></p>
+        </p>
+        </div>
+        <figure id="Location11"></figure>      
+    </section>
+
 <footer class="site-footer">
   <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a>
   <a href="https://github.com/ysienlau/ysienlau.github.io">GitHub</a>
@@ -181,7 +208,79 @@
 
         let figure_9_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week4/updated_chart.json";
 
-        vegaEmbed('#Location9', figure_9_spec)
+        vegaEmbed('#Location9', figure_9_spec);
+
+        //--- script for API
+
+        (() => {
+        const base = "https://collectionapi.metmuseum.org/public/collection/v1.1/search";
+        const DEPARTMENT = 18;                          // 18 = Musical Instruments
+        const periods = [
+            ["Before 1500", -5000, 1499], ["1500s", 1500, 1599], ["1600s", 1600, 1699],
+            ["1700s", 1700, 1799], ["1800s", 1800, 1899], ["1900s", 1900, 1999], ["2000s", 2000, 2030]
+        ];
+        const pause = ms => new Promise(r => setTimeout(r, ms));
+
+        async function count(a, b) {
+            const url = `${base}?departmentId=${DEPARTMENT}&dateBegin=${a}&dateEnd=${b}&limit=1`;
+            for (let attempt = 0; attempt < 3; attempt++) {
+            try {
+                const r = await fetch(url);
+                if (r.ok) return (await r.json()).total ?? 0;
+            } catch (e) {}
+            await pause(1000 * (attempt + 1));
+            }
+            return null;
+        }
+
+        async function load() {
+            const cached = sessionStorage.getItem("instrumentCounts");
+            if (cached) return JSON.parse(cached);
+            const rows = [];
+            for (const [label, a, b] of periods) {
+            const n = await count(a, b);
+            if (n !== null) rows.push({ period: label, objects: n });
+            await pause(300);
+            }
+            if (rows.length === periods.length) sessionStorage.setItem("instrumentCounts", JSON.stringify(rows));
+            return rows;
+        }
+
+        load().then(rows => {
+            vegaEmbed("#Location10", {
+            "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+            "title": { "text": "A Large Proportion of Musical instruments at the Met were produced in the 19th century",
+                        "subtitle": "All objects in the department with a recorded date. Source: Metropolitan Museum of Art Collection API",
+                        "anchor": "start" },
+            "width": 700,
+            "height": 350,
+            "data": { "values": rows },
+            "mark": { "type": "bar", "color": "#E4002B" },
+            "config": {
+                "font": "Cormorant Garamond, Georgia, 'Times New Roman', serif",
+                "title": { "fontSize": 20, "fontWeight": 700, "subtitleFontSize": 16, "subtitleColor": "#555" },
+                "axis": {
+                    "labelFont": "Calibri, Carlito, 'Source Sans 3', Arial, sans-serif",
+                    "titleFont": "Calibri, Carlito, 'Source Sans 3', Arial, sans-serif",
+                    "labelFontSize": 14, "titleFontSize": 14, "titleFontWeight": 600,
+                    "labelColor": "#222", "titleColor": "#222",
+                    "gridColor": "#e8e8e8", "domainColor": "#999", "tickColor": "#999"}},
+            "encoding": {
+                "x": { "field": "period", "type": "ordinal", "sort": null,
+                    "axis": { "title": "Period made", "labelAngle": 0 } },
+                "y": { "field": "objects", "type": "quantitative", "axis": { "title": "Objects" } },
+                "tooltip": [{ "field": "period" }, { "field": "objects" }]
+            }
+            });
+        }).catch(console.error);
+        })();
+
+        //-- 
+
+        let figure_11_spec = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/week5/apocalypse.json";
+
+        vegaEmbed('#Location11', figure_11_spec)
+
 
     </script>
 
