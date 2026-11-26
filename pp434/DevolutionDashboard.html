@@ -7,23 +7,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&family=Archivo+Black&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../css/portfolio.css">
     <style>
         body.dashboard .intro {
-            background: #F8DDD5;              
+            background: #FFE3DE;
+            padding: 24px 32px;
+            margin-bottom: 32px;
         }
         body.dashboard .intro h1 {
-            color: #4A1B0C;                  
+            color: #4A1B0C;
+            font-size: clamp(2.4rem, 4vw, 3rem);   
+            line-height: 1.05;                       
+            letter-spacing: -0.01em;                 
+            text-wrap: balance;                      
+            margin-bottom: 12px;                     
         }
         body.dashboard figcaption,
         body.dashboard a {
-            color: #8B4A3D;                   
+            color: #de806d;                   
         }
         body.dashboard .notes {
-            border-top: 3px solid #F4C95D;   
+            border-top: 3px solid var(--sun);
+            margin-top: 48px;      
+            padding-top: 16px;     
         }
+        body.dashboard {
+            padding-right: 48px;     
+        }
+
+        #charts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 1.5rem;
+        }
+        
     </style>
     <title>My Portfolio</title> 
 
@@ -33,18 +52,19 @@
 
 </head>
 
-<body>
+<body class="dashboard" style="padding-right: 48px;">
     <header class="intro">
         <div class="wrap">
-            <p><a href="portfolio.html">Back to portfolio</a></p>
-            <h1>[Your question, e.g. about skills in South Yorkshire since devolution]</h1>
-            <p>[Two or three sentences in your own words: what South Yorkshire's devolved powers cover,
-               why skills, and what the dashed line marks.]</p>
+            <p><a href="index.html">Back to portfolio</a></p>
+            <h1>Devolution in South Yorkshire: Education and Employment</h1>
+            <p> South Yorkshire's Combined Authority was legally established in April 2014. The Sheffield City Region Devolution Deal agreed on October 2, 2015, and signed into law on July 27, 2020. 
+                Doncaster, Rotherham and Sheffield elected the region's first mayor in 2018 (indicated as a dashed line in the following charts). 
+                This dashboard presents 6 time series for the South Yorkshire Combined Authority, focusing on skills, education, and employment.</p>
+            <p> These charts are based on data from the Office for National Statistics, retrieved using nomis API (Colab Notebook available <a href="https://colab.research.google.com/drive/10UWqTgkvNphXmIoTF0_jaBEyRbQ-tBRW?usp=sharing">here</a>). </p>
         </div>
     </header>
 
     <main class="wrap">
-        <!-- Six empty figures; the loop below fills them -->
         <div id="charts">
             <figure><div id="c1" class="chart"></div><figcaption id="cap1"></figcaption></figure>
             <figure><div id="c2" class="chart"></div><figcaption id="cap2"></figcaption></figure>
@@ -57,48 +77,45 @@
         <section class="notes">
             <p>Source: ONS Annual Population Survey, via the Nomis API. Data downloaded with a loop in
                <a href="https://colab.research.google.com/drive/10UWqTgkvNphXmIoTF0_jaBEyRbQ-tBRW?usp=sharing">this Colab notebook</a>.</p>
-            <p>[Your note on the NVQ to RQF classification change after 2021, and any caveats about the survey.]</p>
+            <p> Note: Qualification charts end in 2021 as ONS shifted from National Vocational Qualification to the Regulated Qualifications Framework in 2022 (the values are not directly comparable).</p>
         </section>
     </main>
 
     <script>
-        // 1. TEMPLATE: the same for every chart, except the data link and title (filled in by the loop)
         let templateSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-            "title": {"text": "", "anchor": "start", "font": "Inter", "fontSize": 14, "fontWeight": 500},
+            "title": {"text": "", "anchor": "start", "font": "Inter", "fontSize": 14, "fontWeight": 500,},
             "width": "container",
-            "height": 180,
+            "height": 250,
             "autosize": {"type": "fit", "contains": "padding"},
             "view": {"stroke": "transparent"},
             "config": {"axis": {"labelFont": "Inter", "titleFont": "Inter", "labelColor": "#1F2A30"}},
             "data": {
-                "url": "",                                        // filled in by the loop
+                "url": "",  // filled in by the loop
                 "format": {"type": "json", "property": "observations"}
             },
             "layer": [
                 {
                     // the data line
-                   "mark": {"type": "line", "color": "#C9553F", "strokeWidth": 2},
+                    "transform": [{"filter": "isValid(datum.value)"}],
+                    "mark": {"type": "line", "color": "#E5533D", "strokeWidth": 2},
                     "encoding": {
-                        "x": {"field": "date", "type": "temporal", "title": null,
-                            "axis": {"grid": false, "format": "%Y", "tickCount": 5}},
-                        "y": {"field": "value", "type": "quantitative", "title": "%",
+                        "x": {"field": "date", "type": "temporal", "title": "Year",
+                            "axis": {"grid": false, "format": "%Y", "tickCount": 5, "titlePadding": 8}},
+                        "y": {"field": "value", "type": "quantitative", "title": "",
                             "scale": {"zero": false},
-                            "axis": {"grid": true, "gridColor": "#E4EFF5", "domain": false, "ticks": false}}
+                            "axis": {"grid": true, "gridColor": "#E4EFF5", "domain": false, "ticks": false, "titlePadding": 10}}
                     }
                 },
                 {
-                    // dashed line at the first mayoral election (3 May 2018)
                     "data": {"values": [{"date": "2018-05-03"}]},
-                    "mark": {"type": "rule", "strokeDash": [4, 3], "color": "#8B4A3D"},
+                    "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#8B4A3D"},
                     "encoding": {"x": {"field": "date", "type": "temporal"}}
                 },
                 {
-                    // label for the dashed line
                     "data": {"values": [{"date": "2018-05-03", "label": "Mayor elected"}]},
-                    "transform": [{"filter": "isValid(datum.value)"}],
-                    "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 4,
-                             "fontSize": 10, "color": "#8B4A3D", "font": "Inter"},
+                    "mark": {"type": "text", "align": "center", "baseline": "top", "dx": 0, "dy": -15,
+                            "fontSize": 11, "color": "#8B4A3D", "font": "Inter"},
                     "encoding": {
                         "x": {"field": "date", "type": "temporal"},
                         "y": {"value": 0},
@@ -108,7 +125,6 @@
             ]
         };
 
-        // 2. THE LISTS TO LOOP OVER (same names as the variables dict in the Colab notebook)
         let seriesCodes = ["nvq4_plus", "nvq3_plus", "no_quals_nvq",
                            "nvq4_25_49", "job_training", "employment_rate"];
 
@@ -119,18 +135,20 @@
                       "Job-related training, last 13 weeks",
                       "Employment rate, ages 16–64"];
 
-        // Your takeaway for each chart, in your own words (leave "" to show nothing)
-        let captions = ["", "", "", "", "", ""];
+        let yTitles = ["% aged 16–64", "% aged 16–64", "% aged 16–64",
+               "% aged 25–49", "% aged 16–64", "% aged 16–64"];
 
-        // 3. WHERE THE DATA FILES ARE: your raw GitHub data folder, ending in /
+        let captions = ["", "", "", "", "", ""];
+        
+        // where the data files are
         let baseUrl = "https://raw.githubusercontent.com/ysienlau/ysienlau.github.io/refs/heads/main/pp434/devolution_data/";
 
-        // 4. THE LOOP: one vegaEmbed call, run once per series
         for (let i = 0; i < seriesCodes.length; i++) {
             let spec = structuredClone(templateSpec);     // fresh copy for each chart
 
             spec.data.url = `${baseUrl}data_SY_${seriesCodes[i]}.json`;
             spec.title.text = titles[i];
+            spec.layer[0].encoding.y.title = yTitles[i];
 
             vegaEmbed(`#c${i + 1}`, spec, {"actions": false});
             document.getElementById(`cap${i + 1}`).textContent = captions[i];
