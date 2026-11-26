@@ -1,10 +1,10 @@
 :root {
-  --sky: #DDF0FF;
+  --page-green:#E7F0EB;
   --coral: #FF6F59;
   --sun: #FFC93C;
   --ink: #111111;
-  --paper: #FFFFFF;
-  --data-blue: #1F5FBF;
+  --card-cream: #f5f3f0;
+  --data-red: #c84962;
   --font-head: 'Archivo Black', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
@@ -14,7 +14,7 @@
 body {
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--sky);
+  background: var(--page-green);
   max-width: none;
   padding: 24px 48px;
 }
@@ -49,7 +49,7 @@ header p {
 
 /* ---- Links ---- */
 a {
-  color: var(--data-blue);
+  color: var(--data-red);
 }
 
 nav a {
@@ -69,7 +69,7 @@ iframe {
   border-bottom-width: 5px;
   border-radius: 0;
   box-shadow: none;
-  background: var(--paper);
+  background: var(--card-cream);
 }
 
 .links {
@@ -92,7 +92,7 @@ iframe {
 }
 
 .card {
-  background: var(--paper);
+  background: var(--card-cream);
   border: 2px solid var(--ink);
   border-bottom-width: 5px;
   padding: 16px 18px;
@@ -160,8 +160,11 @@ iframe {
 }
 
 #featured-chart,
-#featured-chart .vega-embed {
-  width: 100%;
+#featured-chart img {
+    display: block;
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
 }
 
 /* headers */
@@ -188,7 +191,7 @@ iframe {
   margin-left: 20px;
   margin-right: 0;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--data-red);
   font-size: 1.1rem;
 }
 
@@ -340,7 +343,7 @@ iframe {
 .site-footer a {
   margin-left: 20px;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--data);
   text-decoration: none;
   font-size: 1.3rem;
 }
