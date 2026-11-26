@@ -45,7 +45,10 @@
     <h3>PP434 Portfolio</h3>
     <p>Portfolio for the PP434 Automated Data Visualisation class at the LSE.</p>
     <div class="card-chart">
-      <div id="featured-chart"></div>
+      <figure>
+      <img src="images/two-child-limit.svg"
+          alt="Bar chart: households affected by the two-child limit in Great Britain, rising from about 70,000 in 2018 to about 470,000 in 2025">
+      </figure>
     </div>
     <p class="status"><a href="pp434/">View portfolio →</a></p>
   </article>
@@ -71,28 +74,6 @@
   <a href="https://www.linkedin.com/in/ysien-lau">LinkedIn</a>
   <a href="https://github.com/ysienlau/ysienlau.github.io">GitHub</a>
 </footer>
-
-
-<script>
-(function () {
-  var SPEC_URL = "pp434/week1/uk_renewables.json";
-
-  fetch(SPEC_URL)
-    .then(function (r) { return r.json(); })
-    .then(function (spec) {
-      spec.width = "container";
-      spec.height = 180;
-      spec.autosize = {type: "fit", contains: "padding"};
-      spec.padding = {left: 5, right: 20, top: 5, bottom: 5};
-      return vegaEmbed("#featured-chart", spec, {actions: false});
-    })
-    .then(function (result) {
-      window.addEventListener("load", function () { result.view.resize().runAsync(); });
-      setTimeout(function () { result.view.resize().runAsync(); }, 300);
-    })
-    .catch(function (err) { console.error("Featured chart failed:", err); });
-})();
-</script>
 
 </body>
 </html>
