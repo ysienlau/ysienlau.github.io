@@ -1,0 +1,58 @@
+Status code: 200
+Final URL: https://questions-statements-api.parliament.uk/api/writtenquestions/questions?tabledWhenFrom=2024-03-04&tabledWhenTo=2024-03-10&house=Commons&take=100&skip=0
+
+Top-level keys: ['totalResults', 'results']
+Total results for this week: 1215
+Results returned in this call: 100
+
+Keys in one result: ['value', 'links']
+
+Full first result:
+{
+  "value": {
+    "id": 1694512,
+    "askingMemberId": 4504,
+    "askingMember": null,
+    "house": "Commons",
+    "memberHasInterest": false,
+    "dateTabled": "2024-03-07T00:00:00",
+    "dateForAnswer": "2024-03-14T00:00:00",
+    "uin": "17634",
+    "questionText": "To ask the Secretary of State for Health and Social Care, with reference to paragraph 2.20 of Spring Budget 2024, HC 560, if she will publish the modelling used to estimate the number of patients that will be impacted by the proposed upgrading of 100 MRI ",
+    "answeringBodyId": 17,
+    "answeringBodyName": "Department of Health and Social Care",
+    "isWithdrawn": false,
+    "isNamedDay": true,
+    "groupedQuestions": [
+      "17633"
+    ],
+    "answerIsHolding": false,
+    "answerIsCorrection": false,
+    "answeringMemberId": 4044,
+    "answeringMember": null,
+    "correctingMemberId": null,
+    "correctingMember": null,
+    "dateAnswered": "2024-05-14T00:00:00",
+    "answerText": "The Department does not hold data on the average time taken for patients to receive relevant Magnetic Resonance Imaging (MRI) test results. The Department is, therefore, unable to make an estimate of the average time for such results to be received when t...",
+    "originalAnswerText": "",
+    "comparableAnswerText": "",
+    "dateAnswerCorrected": null,
+    "dateHoldingAnswer": "2024-03-14T00:00:00",
+    "attachmentCount": 0,
+    "heading": "Magnetic Resonance Imagers",
+    "attachments": [],
+    "groupedQuestionsDates": [
+      {
+        "questionUin": "17633",
+        "dateTabled": "2024-03-07T00:00:00"
+      }
+    ]
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "/Questions/1694512",
+      "method": "GET"
+    }
+  ]
+}
